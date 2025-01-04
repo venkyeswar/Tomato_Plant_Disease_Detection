@@ -1,0 +1,102 @@
+
+# Tomato Plant Disease Detection
+
+This project provides a solution to detect the health status of tomato plants based on images using deep learning. The model is built using the VGG16 architecture, and TensorFlow Lite is used for model optimization to reduce its size while maintaining accuracy. It can predict the condition of tomato plants from 10 different classes.
+
+## Project Features
+
+- **10 Classes of Tomato Plant Diseases**:
+  - Tomato___Bacterial_spot
+  - Tomato___Early_blight
+  - Tomato___Late_blight
+  - Tomato___Leaf_Mold
+  - Tomato___Septoria_leaf_spot
+  - Tomato___Spider_mites Two-spotted_spider_mite
+  - Tomato___Target_Spot
+  - Tomato___Tomato_Yellow_Leaf_Curl_Virus
+  - Tomato___Tomato_mosaic_virus
+  - Tomato___healthy
+
+- **VGG16 Architecture**: The model uses the pre-trained VGG16 model, which is fine-tuned on the tomato plant disease dataset to classify the conditions effectively.
+
+- **TensorFlow Lite**: To make the model lightweight and deployable on mobile and edge devices, TensorFlow Lite is used to save the model in a smaller size while maintaining its predictive capabilities.
+
+## Live Demo
+
+You can try the live demo of the application [here](https://tomato-plant-disease-detection-v2i2.onrender.com). Simply upload an image of a tomato plant, and the app will predict its health status based on the model.
+
+## Technologies Used
+
+- **TensorFlow & Keras**: For model training and deployment.
+- **TensorFlow Lite**: For optimizing and saving the trained model in a smaller size.
+- **Flask**: For creating the web application and hosting it.
+- **HTML/CSS**: For building the user interface of the application.
+
+## Installation
+
+To run the project locally, follow these steps:
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/venkyeswar/Tomato_Plant_Disease_Detection.git
+cd Tomato_Plant_Disease_Detection
+```
+
+### Install Dependencies
+
+Create a virtual environment (optional but recommended) and install the required packages:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows, use 'venv\Scripts\activate'
+pip install -r requirements.txt
+```
+
+### Run the Application
+
+After installing the dependencies, you can run the Flask application locally:
+
+```bash
+python app.py
+```
+
+The application will be hosted at `http://127.0.0.1:5000/`. You can upload tomato plant images for prediction.
+
+## How It Works
+
+1. **Image Upload**: The user uploads an image of a tomato plant through the web interface.
+2. **Preprocessing**: The image is preprocessed and resized to fit the input dimensions required by the model.
+3. **Prediction**: The VGG16 model predicts the health status of the plant, categorizing it into one of the 10 classes.
+4. **Result Display**: The predicted label and confidence score are displayed, and the uploaded image is shown as a reference.
+
+## Folder Structure
+
+```
+/tomato-plant-disease-detection
+    ├── /static
+    │   ├── /styles.css
+    ├── /templates
+    │   ├── index.html
+    ├── app.py
+    ├── model.tflite
+    └── requirements.txt
+```
+
+- **`/static/styles.css`**: Contains the CSS for the UI.
+- **`/templates/index.html`**: The HTML template for the front-end user interface.
+- **`app.py`**: Flask application code.
+- **`model.tflite`**: The TensorFlow Lite optimized model.
+- **`requirements.txt`**: List of Python dependencies.
+
+## Model Training
+
+- The model is trained on a dataset containing various images of tomato plants with diseases and healthy plants.
+
+- [Dataset Link](https://tomato-plant-disease-detection-v2i2.onrender.com)
+- The model was trained using transfer learning, leveraging the pre-trained VGG16 architecture and fine-tuning it for this specific task.
+- After training, the model was converted to TensorFlow Lite format to optimize its size and ensure efficient deployment.
+
+## Contributing
+
+Feel free to fork this repository and contribute by raising issues, creating pull requests, or suggesting improvements!
