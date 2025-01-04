@@ -2,11 +2,9 @@ from flask import Flask, render_template, request
 import io
 import base64
 from PIL import Image
-
-
 from predict import predict
 
-# Load the trained model
+
 model_path = "lite_model.tflite" 
 
 app = Flask(__name__)
